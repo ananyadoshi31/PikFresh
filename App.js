@@ -64,18 +64,19 @@ import SelectFruit from './src/screens/SelectFruit';
 import ForgotPassword from './src/screens/ForgotPassword';
 import Verification from './src/screens/Verification';
 import NewPassword from './src/screens/NewPassword';
-
+import Recorder from './src/screens/Recorder';
 import Appleq1 from './src/screens/questions/Appleq1';
 import Appleq2 from './src/screens/questions/Appleq2';
 import Appleq3 from './src/screens/questions/Appleq3';
 import Appleq4 from './src/screens/questions/Appleq4';
 import Bananaq1 from './src/screens/questions/Bananaq1';
 import Support from './src/screens/Support';
+//import Blank from './src/screens/Blank';
 // const Tab=createBottomTabNavigator();
 // const Tab=createMaterialBottomTabNavigator();
 // const Tab=createMaterialTopTabNavigator();
 const Stack=createStackNavigator();
-// const Drawer = createDrawerNavigator();
+//const Drawer = createDrawerNavigator();
 function App()
 {
   // const[submitted,SetSubmitted]=useState(false);
@@ -87,7 +88,7 @@ function App()
   return(
     
     // <Provider  store={Store}>
-      <NavigationContainer>
+      <NavigationContainer >
         <Stack.Navigator
           // screenOptions={({route })=>({
           //   tabBarIcon: ({focused,size,color})=>{
@@ -122,7 +123,7 @@ function App()
           // activeColor='#f0edf6'
           // inactiveColor='#3e2465'
           // barStyle={{backgroundColor:'#694fad'}}
-          initialRouteName='Bananaq1'
+          initialRouteName='Main'
           // drawerPosition='left'
           // drawerType="front"
           // edgeWidth={100}
@@ -174,8 +175,8 @@ function App()
         </Pressable> */}
         
           <Stack.Screen
-            name="Bananaq1"
-            component ={Bananaq1}
+            name="Main"
+            component ={Main}
             options={{
               headerShown:false
             //   header:()=>null,
@@ -192,10 +193,117 @@ function App()
             //   )
             }}
           />
+          <Stack.Screen
+            name="Support"
+            component ={Support}
+            options={{
+              headerShown:false
+            //   header:()=>null,
+            //   tabBarBadge:3
+            // }}
+            // options={{
+            //   title:'ScreenA Title',
+            //   drawerIcon:({focused})=>(
+            //     <FontAwesome5
+            //       name="autoprefixer"
+            //       size={focused? 25: 20}
+            //       color={focused ?'#0ff':'#999999'}
+            //     />
+            //   )
+            }}
+          />
+          <Stack.Screen
+            name="SelectFruit"
+            component ={SelectFruit}
+            options={{
+              headerShown:false
+            //   header:()=>null,
+            //   tabBarBadge:3
+            // }}
+            // options={{
+            //   title:'ScreenA Title',
+            //   drawerIcon:({focused})=>(
+            //     <FontAwesome5
+            //       name="autoprefixer"
+            //       size={focused? 25: 20}
+            //       color={focused ?'#0ff':'#999999'}
+            //     />
+            //   )
+            }}
+          />
+          <Stack.Screen
+            name="Login"
+            component ={Login}
+            options={{
+              headerShown:false
+            //   header:()=>null,
+            //   tabBarBadge:3
+            // }}
+            // options={{
+            //   title:'ScreenA Title',
+            //   drawerIcon:({focused})=>(
+            //     <FontAwesome5
+            //       name="autoprefixer"
+            //       size={focused? 25: 20}
+            //       color={focused ?'#0ff':'#999999'}
+            //     />
+            //   )
+            }}
+          />
+          <Stack.Screen
+            name="CreateAccount"
+            component ={CreateAccount}
+            options={{
+              headerShown:false
+            //   header:()=>null,
+            //   tabBarBadge:3
+            // }}
+            // options={{
+            //   title:'ScreenA Title',
+            //   drawerIcon:({focused})=>(
+            //     <FontAwesome5
+            //       name="autoprefixer"
+            //       size={focused? 25: 20}
+            //       color={focused ?'#0ff':'#999999'}
+            //     />
+            //   )
+            }}
+          />
+          <Stack.Screen
+            name="ForgotPassword"
+            component ={ForgotPassword}
+            options={{
+              headerShown:false
+            //   header:()=>null,
+            //   tabBarBadge:3
+            // }}
+            // options={{
+            //   title:'ScreenA Title',
+            //   drawerIcon:({focused})=>(
+            //     <FontAwesome5
+            //       name="autoprefixer"
+            //       size={focused? 25: 20}
+            //       color={focused ?'#0ff':'#999999'}
+            //     />
+            //   )
+            }}
+          />
+          <Stack.Screen
+            name="Recorder"
+            component ={Recorder}
+            options={{
+              headerShown:false
+            }}
+          />
+          
 
           
         </Stack.Navigator>
+
       </NavigationContainer>
+      
+
+      
     // </Provider>
   )
 }

@@ -28,6 +28,14 @@ import {
 
 export default function Login({navigation})
 {
+    const onPressHandlerSignUp=()=>{
+        navigation.navigate('CreateAccount')
+        
+      }
+      const onPressHandlerForgPass=()=>{
+        navigation.navigate('ForgotPassword')
+        
+      }
 return (
  
       <View style={styles.container}>
@@ -50,18 +58,22 @@ return (
             <TextInput
                 style={styles.input}
             />
-            <Text 
-                style={{
-                    fontSize:15,
-                    fontFamily:'JosefinSans-SemiBold',
-                    color:'#000000',
-                    left:45,
-                    bottom:-20
-
-                  }}
+            <Pressable
+               onPress={onPressHandlerForgPass}  
             >
-                Forgot Password
-            </Text>
+                <Text 
+                    style={{
+                        fontSize:15,
+                        fontFamily:'JosefinSans-SemiBold',
+                        color:'#000000',
+                        left:45,
+                        bottom:-20
+
+                    }}
+                >
+                    Forgot Password
+                </Text>
+            </Pressable>
             <Pressable style={styles.loginbutton} >
                 <Text style={styles.loginbuttontext}>Login</Text>
             </Pressable>
@@ -72,11 +84,17 @@ return (
                     color:'#000000',
                     bottom:-55,
                     textAlign:'center',
+                    left:-40,
 
                   }}
             >
-                New User? Sign up
+                New User? 
             </Text>
+            <Pressable 
+                onPress={onPressHandlerSignUp} 
+            >
+                <Text style={styles.text1}>Sign Up</Text>
+            </Pressable>
         </View>
           
        </View>
@@ -154,5 +172,12 @@ return (
     color:'#000000',
     fontFamily:'JosefinSans-SemiBold',
     top:7
-   }
+   },
+   text1:{
+    color:"#000000",
+    fontFamily:'JosefinSans-SemiBold',
+    textAlign:'center',
+    top:32,
+    left:40,
+},
   })

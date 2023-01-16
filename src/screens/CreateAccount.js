@@ -28,6 +28,10 @@ import {
 
 export default function CreateAccount({navigation})
 {
+    const onPressHandlerLogin=()=>{
+        navigation.navigate('Login')
+        
+      }
 return (
  
       <View style={styles.container}>
@@ -67,11 +71,17 @@ return (
                     color:'#000000',
                     bottom:-55,
                     textAlign:'center',
+                    left:-40
 
                   }}
             >
-                Already have an account ? Login
+                Already have an account ?
             </Text>
+            <Pressable 
+                onPress={onPressHandlerLogin} 
+            >
+                <Text style={styles.text1}>Login</Text>
+            </Pressable>
         </View>
           
        </View>
@@ -149,5 +159,14 @@ return (
     color:'#000000',
     fontFamily:'JosefinSans-SemiBold',
     top:7,
-   }
+   },
+   
+    text1:{
+        color:"#000000",
+        fontFamily:'JosefinSans-SemiBold',
+        textAlign:'center',
+        top:32,
+        left:100,
+    },
+   
   })

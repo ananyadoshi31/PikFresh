@@ -12,6 +12,8 @@ import {
     Pressable,
     // CustomButton,
   } from 'react-native';
+
+
   // import { createDrawerNavigator } from "@react-navigation/drawer";
   // import { NavigationContainer } from "@react-navigation/native";
   // import { ImageBackground } from "react-native";
@@ -34,7 +36,10 @@ import {
 
   export default function Support({navigation})
   {
-
+    const onPressHandler = () => {
+      navigation.navigate('Main')
+      //navigation.goBack();
+  }
 
     return (
         <View

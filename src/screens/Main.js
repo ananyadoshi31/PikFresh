@@ -13,11 +13,12 @@ import {
     // CustomButton,
   } from 'react-native';
 // import { RollInRight } from "react-native-reanimated";
-
- 
- // import "@fontsource/oleo-script";
-  //import { ImageBackground } from "react-native";
- //import CustomButton from '../utils/CustomButton';
+import { NavigationContainer } from "@react-navigation/native";
+import Support from "./Support";
+//import { createDrawerNavigator } from "@react-navigation/drawer";
+// import "@fontsource/oleo-script";
+//import { ImageBackground } from "react-native";
+//import CustomButton from '../utils/CustomButton';
 // import AsyncStorage from "@react-native-async-storage/async-storage";
 // import SQLite from 'react-native-sqlite-storage';
 // import { useSelector, useDispatch } from "react-redux";
@@ -32,17 +33,41 @@ import {
 //     ()=>{ },
 //     error=>{console.log(error)}
 // );
-
+//const Drawer = createDrawerNavigator();
 export default function Main({navigation})
 {
+  const onPressHandlerScan=()=>{
+    navigation.navigate('SelectFruit')
+    
+  }
+  const onPressHandlerSupport=()=>{
+    navigation.navigate('Support')
+    
+  }
+  const onPressHandlerLogin=()=>{
+    navigation.navigate('Login')
+    
+  }
 return (
- 
+  // <NavigationContainer independent={true} >
+  //           <Drawer.Navigator
+  //             initialRouteName="Main"
+  //           >
+  //           <Drawer.Screen
+  //             name="Main"
+  //             component={Main}
+  //           />
+  //           </Drawer.Navigator>
+      
+    
       <View style={styles.container}>
           <ImageBackground 
             source={require('../../assets/Home.png')} 
             style={styles.img}
           >
-            <Pressable style={styles.login} >
+            <Pressable style={styles.login}
+              onPress={onPressHandlerLogin}
+            >
               <Text style={styles.loginbutton}>Login</Text>
             </Pressable>
             <Text style={styles.title}>
@@ -51,19 +76,23 @@ return (
             <Text style={styles.goodq}>
                 ...A future to good quality
             </Text>
-        <Pressable style={styles.button1} >
+        <Pressable style={styles.button1} 
+          onPress={onPressHandlerScan} 
+        >
         <Image style = {styles.logo} source = {require('../../assets/scan_img.png')} />
           <Text style={styles.stylebutton1}>Scan</Text>
         </Pressable>
-        <Pressable style={styles.button2} >
+        {/* <Pressable style={styles.button2} >
         <Image style = {styles.logo} source = {require('../../assets/report_img.png')} />
           <Text style={styles.stylebutton2}>Reports</Text>
-        </Pressable>
-        <Pressable style={styles.button3} >
+        </Pressable> */}
+        <Pressable style={styles.button3}
+            onPress={onPressHandlerSupport} 
+        >
         <Image style = {styles.logo} source = {require('../../assets/support_img.png')} />
           <Text style={styles.stylebutton3}>Support</Text>
         </Pressable>
-        
+ 
             {/* <Button
               title='Scan'
               color='#9bcca5'
@@ -79,6 +108,7 @@ return (
             /> */}
             
        </View>
+       //</NavigationContainer>
       
        
     )
